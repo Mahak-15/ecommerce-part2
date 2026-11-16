@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FORMA Admin</title><link rel="stylesheet" href="/static/admin/admin.css"></head>
+<body><header class="top"><a class="brand" href="/">FORMA<span>.</span></a><div>ADMIN CONSOLE / <a href="/">VIEW STORE ↗</a></div></header>
+<main class="wrap">
+<section class="intro"><div><p class="eyebrow">CONTROL ROOM / 01</p><h1>Store<br><em>analytics.</em></h1><p class="muted">A live view of recorded visits and simulated visitor activity.</p></div>
+<div class="auth"><label for="token">Admin access token</label><input id="token" type="password" autocomplete="off" placeholder="Enter admin token"><button id="save-token">Connect</button><small>Local default: <code>forma-admin-local</code>. Change it before deployment.</small></div></section>
+<nav class="tabs"><a class="active" href="/admin/">Analytics</a><a href="/admin/css-generator">CSS Generator ↗</a></nav>
+<div id="notice" class="notice" role="status">Enter the admin token and select Connect.</div>
+<section class="metrics"><article><span>TOTAL VISITS</span><strong id="total">—</strong><small>Recorded analytics events</small></article><article><span>UNIQUE IPs</span><strong id="unique">—</strong><small>Distinct visitor addresses</small></article><article><span>SIMULATED VISITS</span><strong id="simulated">—</strong><small>Generated test events</small></article></section>
+<section class="panel"><div class="panel-head"><div><p class="eyebrow">TEST DATA</p><h2>Simulate visitor traffic</h2></div><div class="simulate"><input id="sim-count" type="number" min="1" max="500" value="25"><button id="simulate">Generate visits ↗</button></div></div><p class="muted">Creates controlled sample events using documentation-only IP addresses. Country labels are fixture values, not real geolocation.</p></section>
+<section class="columns"><article class="panel"><p class="eyebrow">GEOGRAPHY / FIXTURE MAPPING</p><h2>Visits by country</h2><div id="countries" class="country-list"><p class="muted">Connect to load analytics.</p></div></article>
+<article class="panel"><p class="eyebrow">ACTIVITY / LAST 7 DAYS</p><h2>Daily visits</h2><div id="daily" class="daily-list"><p class="muted">No data yet.</p></div></article></section>
+<section class="panel"><div class="panel-head"><div><p class="eyebrow">LATEST EVENTS</p><h2>Visitor activity</h2></div><button class="secondary" id="refresh">Refresh</button></div>
+<div class="table-wrap"><table><thead><tr><th>IP ADDRESS</th><th>COUNTRY</th><th>PATH</th><th>TIME (UTC)</th><th>TYPE</th></tr></thead><tbody id="events"><tr><td colspan="5">No events loaded.</td></tr></tbody></table></div></section>
+<footer>FORMA ADMIN / LOCAL DEVELOPMENT TOOL</footer></main><script src="/static/admin/analytics.js" defer></script></body></html>
